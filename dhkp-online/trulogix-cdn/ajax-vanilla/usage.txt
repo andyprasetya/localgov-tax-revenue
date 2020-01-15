@@ -1,0 +1,136 @@
+https://github.com/fdaciuk/ajax
+
+Usage:
+
+AMD
+
+define(['ajax'], function (ajax) {
+  ajax().get(...)
+  ...
+})
+CommonJS
+
+var ajax = require('@fdaciuk/ajax')
+ajax().post(...)
+...
+ES6 / ES2015 module
+
+import ajax from 'ajax'
+ajax().put(...)
+Method of window object
+
+window.ajax().get(...)
+or just
+
+ajax().get(...)
+Signature
+
+ajax([options])
+Options
+
+Optional object with request options. See all accepted options below.
+
+HTTP Methods
+
+You may pass any HTTP method as you want, using method property:
+
+var request = ajax({
+  method: 'options',
+  url: '/api/users',
+  data: {
+    user: 'john'
+  }
+})
+
+request.then(function (response) {...})
+For using this kind of request, you must pass url property.
+
+The property data is optional, but may used to pass any data via body on request.
+
+headers
+
+An object when key is a header name, and value is a header value.
+
+ajax({
+  headers: {
+    'content-type': 'application/json',
+    'x-access-token': '123@abc'
+  }
+})
+If content-type is not passed, application/x-www-form-urlencoded will be used.
+
+Note about uploads:
+
+If you need to upload some file, with FormData, use content-type: null.
+
+baseUrl
+
+You can pass a baseUrl param to improve calls. Example:
+
+const request = ajax({ baseUrl: 'http://example.com/api/v2' })
+request.get('/users') // get `http://example.com/api/v2/users` url
+Methods
+
+You may use any of this methods, instead the above approach:
+
+get(url)
+
+Get data as a JSON object.
+ajax().get('/api/users')
+post(url, [data])
+
+Save a new register or update part of this one.
+// Without headers
+ajax().post('/api/users', { slug: 'john' })
+
+// With headers
+var request = ajax({
+  headers: {
+    'x-access-token': '123@abc'
+  }
+})
+
+request.post('/login', { username: 'user', password: 'b4d45$' })
+put(url, [data])
+
+Update an entire register.
+ajax().put('/api/users', { slug: 'john', age: 37 })
+delete(url, [data])
+
+Delete a register.
+ajax().delete('/api/users', { id: 1 })
+Return methods
+
+then(response, xhrObject)
+
+Promise that returns if the request was successful.
+ajax().get('/api/users').then(function (response, xhr) {
+  // Do something
+})
+catch(responseError, xhrObject)
+
+Promise that returns if the request has an error.
+ajax().post('/api/users', { slug: 'john' }).catch(function (response, xhr) {
+  // Do something
+})
+always(response, xhrObject)
+
+That promise always returns, independent if the status is done or error.
+ajax().post('/api/users', { slug: 'john' }).always(function (response, xhr) {
+  // Do something
+})
+Abort request
+
+If a request is very slow, you can abort it using abort() method:
+
+const getLazyUser = ajax().get('/api/users/lazy')
+
+const timer = setTimeout(function () {
+  getLazyUser.abort()
+}, 3000)
+
+getLazyUser.then(function (response) {
+  clearTimeout(timer)
+  console.log(response)
+})
+In the above example, if request is slowest than 3 seconds, it will be aborted.

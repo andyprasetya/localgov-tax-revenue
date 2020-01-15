@@ -1,0 +1,39 @@
+{
+  "name": "webmap-geodb-backend",
+  "version": "1.0.0",
+  "description": "Webmap GeoDB Backend is an API for a webmap in front of MySQL or PostgreSQL/PostGIS.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/andyprasetya/webmap-geodb-backend.git"
+  },
+  "keywords": [],
+  "author": "andyprasetya@opense7en.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/andyprasetya/webmap-geodb-backend/issues"
+  },
+  "homepage": "https://gitlab.com/andyprasetya/webmap-geodb-backend#readme",
+  "devDependencies": {
+    "mocha": "latest"
+  },
+  "dependencies": {
+    "dbgeo": "latest",
+    "formidable": "latest",
+    "mongodb": "^3.3.5",
+    "mysql": "latest",
+    "node-fetch": "latest",
+    "oracledb": "^4.1.0",
+    "pg": "^7.14.0",
+    "request": "latest",
+    "sqlite3": "^4.1.1"
+  }
+}

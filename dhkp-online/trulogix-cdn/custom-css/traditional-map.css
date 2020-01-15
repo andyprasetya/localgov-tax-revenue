@@ -1,0 +1,16 @@
+#appxmap {
+	bottom: 0;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 100%;
+}
+@media (min-width: 768px) {
+  #appxmap {
+  	position: absolute;
+		top: 0;
+  }
+}
+.leaflet-google-layer{
+    z-index: 0 !important;
+}

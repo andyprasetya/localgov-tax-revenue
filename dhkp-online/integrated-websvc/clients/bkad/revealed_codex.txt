@@ -1,0 +1,4 @@
+[bppkad]
+revealed {
+	codex : 755c1e418c9f99eaf12a9522e095df99540eb9d04604c2dc3f59674569414f03
+}

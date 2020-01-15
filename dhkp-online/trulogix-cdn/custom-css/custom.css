@@ -1,0 +1,31 @@
+#login-notaris, #login-desa {
+  overflow: hidden;
+}
+#login-notaris .modal-header h4,
+#login-desa .modal-header h4 {
+  text-transform: uppercase;
+}
+#login-notaris form,
+#login-desa form {
+  margin-bottom: 21px;
+}
+#login-notaris a, #login-desa a {
+  color: #2b90d9;
+}
+#login-notaris p, #login-desa p {
+  font-weight: 300;
+  margin-bottom: 21px;
+  font-size: 13px;
+}
+.custom-frontpage-section {
+	padding-top: 0 !important;
+}
+.table thead > tr > th.valigned-middle, .table tbody > tr > td.valigned-middle {
+	vertical-align: middle;
+}
+.thtd-custom-centered {
+	text-align:center;
+}
+.thtd-custom-width, .pdf-link-holder {
+	width: 40px;
+}

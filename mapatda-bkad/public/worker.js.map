@@ -1,0 +1,1 @@
+{"version":3,"file":"worker.js","sources":["../src/workers/worker.js"],"sourcesContent":["self.addEventListener('message', function(e) {\r\n  self.postMessage(e.data);\r\n}, false);"],"names":[],"mappings":";;;EAAA,IAAI,CAAC,gBAAgB,CAAC,SAAS,EAAE,SAAS,CAAC,EAAE;EAC7C,EAAE,IAAI,CAAC,WAAW,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC;EAC3B,CAAC,EAAE,KAAK,CAAC;;;;"}

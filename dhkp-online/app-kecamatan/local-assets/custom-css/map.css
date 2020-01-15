@@ -1,0 +1,26 @@
+#appxmap, #map {
+	bottom: 0;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 100%;
+}
+@media (min-width: 768px) {
+  #appxmap, #map {
+  	position: absolute;
+		top: 0;
+  }
+}
+.leaflet-google-layer{
+    z-index: 0 !important;
+}
+.leaflet-control-layers {
+  overflow: auto;
+}
+.leaflet-control-layers label {
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+.leaflet-control-layers-list input[type="radio"], input[type="checkbox"] {
+  margin: 2px;
+}
